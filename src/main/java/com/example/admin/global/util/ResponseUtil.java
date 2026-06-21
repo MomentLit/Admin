@@ -1,6 +1,6 @@
 package com.example.admin.global.util;
 
-import com.example.space.global.dto.ApiResponse;
+import com.example.admin.global.dto.ApiResponse;
 
 public class ResponseUtil {
 
