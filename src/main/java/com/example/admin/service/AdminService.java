@@ -40,7 +40,7 @@ public class AdminService {
     public synchronized AdminSpaceResponse adminSpaceReject(
             Long spaceId, String authenticatedRole
     ){
-        if (authenticatedRole.equals(Role.ADMIN.name())){
+        if (!authenticatedRole.equals(Role.ADMIN.name())){
             throw new ForbiddenException("관리자만 가능합니다");
         }
         Space space = spaceRepository.findById(spaceId)
