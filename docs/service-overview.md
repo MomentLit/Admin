@@ -11,7 +11,7 @@ Space Approve, Space Reject
 ## Technology Stack
 
 - Language: Java 21
-- Framework: Spring Boot 4.0.5
+- Framework: Spring Boot 4.1.0
 - Build Tool: Gradle
 - Database: PostgreSQL via Spring Data JPA; H2 test runtime dependency
 - Other: Lombok is used where visible. JWT and Spring Security are used where security classes are visible.

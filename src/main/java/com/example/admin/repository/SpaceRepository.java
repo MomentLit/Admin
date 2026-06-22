@@ -8,5 +8,4 @@ import java.util.Optional;
 
 @Repository
 public interface SpaceRepository extends JpaRepository<Space,Long> {
-    Space findSpaceById(Long id);
 }
