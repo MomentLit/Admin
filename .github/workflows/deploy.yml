@@ -1,4 +1,4 @@
-name: Deploy Space to ECS
+name: Deploy Admin to ECS
 
 on:
   push:
@@ -9,9 +9,9 @@ on:
 env:
   AWS_REGION: ap-northeast-2
   AWS_ACCOUNT_ID: 727452759104
-  ECR_REPOSITORY: momentlit/space
+  ECR_REPOSITORY: momentlit/admin
   ECS_CLUSTER: default
-  ECS_SERVICE: momentlit-space-service
+  ECS_SERVICE: momentlit-admin-service
   IMAGE_TAG: latest
 
 jobs:
