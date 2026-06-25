@@ -1,13 +1,10 @@
 package com.example.admin.entity;
 
-import com.example.admin.entity.ApprovalStatus;
-import com.example.admin.entity.SpaceCategory;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 @Getter
 @Entity
@@ -30,8 +27,8 @@ public class Space {
     @Column(name = "ai_summary", columnDefinition = "TEXT")
     private String aiSummary;
 
-    @Column(nullable = false)
-    private String address;
+    @Column(name = "address_id", nullable = false)
+    private Long addressId;
 
     @Column(name = "thumbnail_url", nullable = false)
     private String thumbnailUrl;
@@ -49,12 +46,6 @@ public class Space {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private SpaceCategory category;
-
-    @Column(precision = 10, scale = 8)
-    private BigDecimal lat;
-
-    @Column(precision = 11, scale = 8)
-    private BigDecimal lng;
 
     private String phone;
 
