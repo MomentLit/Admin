@@ -1,6 +1,6 @@
 package com.example.admin.global.config;
 
-import com.example.space.global.security.JwtFilter;
+import com.example.admin.global.security.JwtFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
