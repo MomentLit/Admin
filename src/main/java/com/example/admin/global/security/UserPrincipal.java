@@ -1,16 +1,7 @@
 package com.example.admin.global.security;
 
-import lombok.Getter;
+public record UserPrincipal(
+        String userId, String role
+) {
 
-@Getter
-public class UserPrincipal {
-
-    private final String userId;
-
-    private final String role;
-
-    public UserPrincipal(String userId, String role) {
-        this.userId = userId;
-        this.role = role;
-    }
 }

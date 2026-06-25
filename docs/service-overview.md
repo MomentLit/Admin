@@ -2,28 +2,28 @@
 
 ## Service Name
 
-Space
+Admin
 
 ## Service Responsibility
 
-Space creation, listing, detail lookup, update, soft deletion, owner space listing, schedule creation/listing/update/deletion, and image URL persistence.
+Space Approve, Space Reject
 
 ## Technology Stack
 
 - Language: Java 21
-- Framework: Spring Boot 3.4.5
+- Framework: Spring Boot 4.1.0
 - Build Tool: Gradle
 - Database: PostgreSQL via Spring Data JPA; H2 test runtime dependency
 - Other: Lombok is used where visible. JWT and Spring Security are used where security classes are visible.
 
 ## Main Package Structure
 
-- Main package: `com.example.space`
-- Controller: SpaceController handles all visible /spaces APIs.
-- Service: SpaceService owns transaction boundaries and use-case orchestration for spaces, images, and schedules.
+- Main package: `com.example.admin`
+- Controller: AdminController handles all visible /admin APIs.
+- Service: AdminService owns transaction boundaries and use-case orchestration for spaces.
 - Repository: Repositories are persistence boundaries and use ID values rather than JPA associations between Space, SpaceImage, and SpaceSchedule.
 - DTO: Request records are under dto.request; response records are under dto.response. ApiResponse<T> wraps successful non-204 responses.
-- Entity/domain: Space soft-deletes with deletedAt and isActive=false. New spaces start with adminStatus=PENDING and isActive=true. SpaceSchedule validates start/end time order.
+- Entity/domain: 
 
 ## Main Domains
 
