@@ -5,39 +5,6 @@ info:
   version: 1.0.0
 tags: []
 paths:
-  /admin/spaces/{id}/approve:
-    patch:
-      summary: adminSpaceApprove
-      deprecated: false
-      description: ''
-      tags: []
-      parameters:
-        - name: id
-          in: path
-          description: ''
-          required: true
-          schema:
-            type: string
-        - name: Authorization
-          in: header
-          description: ''
-          required: true
-          example: Bearer {{access_token}}
-          schema:
-            type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/adminSpaceRequest'
-            example:
-              role: ADMIN
-        required: true
-      responses:
-        '202':
-          description: ''
-          headers: {}
-      security: []
   /admin/spaces/{id}/reject:
     patch:
       summary: adminSpaceReject
@@ -58,28 +25,43 @@ paths:
           example: Bearer {{access_token}}
           schema:
             type: string
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/adminSpaceRequest'
-            example:
-              role: ADMIN
-        required: true
       responses:
         '202':
           description: ''
           headers: {}
       security: []
+  /admin/spaces/{id}/approve:
+    patch:
+      summary: adminSpaceApprove
+      deprecated: false
+      description: ''
+      tags: []
+      parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+        - name: Authorization
+          in: header
+          description: ''
+          required: false
+          example: Bearer {{access_token}}
+          schema:
+            type: string
+      responses:
+        '202':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                properties: {}
+          headers: {}
+      security: []
 components:
-  schemas:
-    adminSpaceRequest:
-      type: object
-      properties:
-        role:
-          type: string
-      required:
-        - role
+  schemas: {}
   responses: {}
   securitySchemes: {}
 servers: []
